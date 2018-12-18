@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+li{width:100%;height: 20px;background: #466465; margin-bottom: 10px; border: #466465 1px solid;}
+.cur{ background: red;}
+</style>
+
+<body>
+
+<ul>
+
+    <li class="cur"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+    <script type="text/html">
+
+        function fn(n) {
+            if (n === 1 || n === 2) return 1;
+            if (n > 2) {
+
+                return fn(n - 1) + fn(n - 2)
+            }
+
+
+        }
+        console.log(fn(8));
+
+
+        function sun(n) {
+
+            if (n === 1) {
+                return 1;
+            } else {
+
+                return n + sun(n - 1)
+            }
+
+        }
+
+        console.log(sun(3));
+
+
+        fun();
+        function fun() {
+
+            console.log(num);
+          var num = 20;
+
+        }
+
+    </script>
+    <script type="text/html">
+
+
+        var p = {
+            name: 'josh',
+
+
+            age: 25,
+            hometown: 'xy',
+            firht:['123',324 , '243'],
+            sayha : function(vba) {
+
+             console.log(vba);
+               
+            }
+        }
+    
+        // console.log(    p.firht)
+
+
+        for (var key in p){
+
+
+            // console.log(key);
+            console.log(p[key] +'--'+ key);
+            
+            
+        }
+
+ 
+
+    </script>
+    <script type="text/html">
+        function hef() {
+
+            var obj = new Object();
+            obj.name = null;
+            obj.age = null;
+            obj.sty = function () {
+
+                console.log(this.name + '2e4')
+            }
+            return obj;
+
+        }
+
+       var p = hef();
+       p.name = 'josh';
+       p.age = 23
+        console.log(p.sty);
+        p.sty();
+
+    </script>
+    <script type="text/html">
+    function dog(name,age,dogfri){
+
+       this.name= name;
+       this.age= age;
+       this.dogfri= dogfri;
+
+
+
+    }
+
+    var smalldog =new dog('josh', '',['123','466'])
+
+    console.log(smalldog);
+    console.log(smalldog.dogfri);
+    
+    </script>
+    <script type="text/html">
+        function dog(kljfs) {
+            this._init(kljfs)
+            
+        }
+        dog.prototype = {
+            _init: function (kljfs) {
+                this.name = kljfs.name;
+                this.age = kljfs.age;
+                this.dogfri = kljfs.dogfri;
+            },
+            eat: function (aj) {
+                console.log(this.name + '1323' + aj)
+            }
+        }
+        var smalldog = new dog({ name: 'joshh', age: '', dogfri: ['123', '466'] })
+        smalldog.eat('nai');
+        console.log(smalldog);
+    </script>
+    <script type="text/html">
+        var dat = new Date()
+        var i = 10;
+       timeer= setInterval(function () {
+          
+            i+=1;
+            console.log('hahah' + i);
+            if(i == 18){
+
+                clearInterval(timeer)
+                console.log(timeer);
+                
+            }
+
+        }, 1000)
+
+    </script>
+
+    <script>
+    var dataarr=['118','117','116']
+    dataarr.forEach(element => {
+
+        // console.log(element)
+        
+    });
+
+
+    var datearr =[114,112,'145']
+    datearr.forEach(function(index,insdc){
+           console.log(index,insdc)
+
+
+    })
+    </script>
+
+
+
+
+
+<script>
+
+    
+
+</script>
+
+</body>
+
+</html>

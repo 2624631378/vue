@@ -1,0 +1,90 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-title" content="财经直播">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="baidu-tc-cerfication" content="ba07d70ead40fe3171a72dc4099ed4e5">
+    <meta name="format-detection" content="telephone=no" />
+    <title>9度财经视频</title>
+    <link rel="stylesheet" type="text/css" href="http://openapi.9dcj.com/css/9d_live2.css">
+    <script src="http://openapi.9dcj.com/js/jquery-1.7.2.min.js"></script>
+    <script>
+     window.browserRedirect_she='pc';
+            // 判断设备是pc还是手持设备
+    function browserRedirect() {
+          var sUserAgent = navigator.userAgent.toLowerCase();
+          var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+          var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+          var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+          var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+          var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+          var bIsAndroid = sUserAgent.match(/android/i) == "android";
+          var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+          var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+          if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+              // alert("移动2");
+              document.write('<link rel="stylesheet" type="text/css" href="http://openapi.9dcj.com/css/9d_wap.css">');
+              $('.geren_9dLeft').hide();
+              !function(a,b){function c(){var b=f.getBoundingClientRect().width;b/i>540&&(b=540*i);var c=b/10;f.style.fontSize=c+"px",k.rem=a.rem=c}var d,e=a.document,f=e.documentElement,g=e.querySelector('meta[name="viewport"]'),h=e.querySelector('meta[name="flexible"]'),i=0,j=0,k=b.flexible||(b.flexible={});if(g){console.warn("将根据已有的meta标签来设置缩放比例");var l=g.getAttribute("content").match(/initial\-scale=([\d\.]+)/);l&&(j=parseFloat(l[1]),i=parseInt(1/j))}else if(h){var m=h.getAttribute("content");if(m){var n=m.match(/initial\-dpr=([\d\.]+)/),o=m.match(/maximum\-dpr=([\d\.]+)/);n&&(i=parseFloat(n[1]),j=parseFloat((1/i).toFixed(2))),o&&(i=parseFloat(o[1]),j=parseFloat((1/i).toFixed(2)))}}if(!i&&!j){var p=(a.navigator.appVersion.match(/android/gi),a.navigator.appVersion.match(/iphone/gi)),q=a.devicePixelRatio;i=p?q>=3&&(!i||i>=3)?3:q>=2&&(!i||i>=2)?2:1:1,j=1/i}if(f.setAttribute("data-dpr",i),!g)if(g=e.createElement("meta"),g.setAttribute("name","viewport"),g.setAttribute("content","initial-scale="+j+", maximum-scale="+j+", minimum-scale="+j+", user-scalable=no"),f.firstElementChild)f.firstElementChild.appendChild(g);else{var r=e.createElement("div");r.appendChild(g),e.write(r.innerHTML)}a.addEventListener("resize",function(){clearTimeout(d),d=setTimeout(c,300)},!1),a.addEventListener("pageshow",function(a){a.persisted&&(clearTimeout(d),d=setTimeout(c,300))},!1),"complete"===e.readyState?e.body.style.fontSize=12*i+"px":e.addEventListener("DOMContentLoaded",function(){e.body.style.fontSize=12*i+"px"},!1),c(),k.dpr=a.dpr=i,k.refreshRem=c,k.rem2px=function(a){var b=parseFloat(a)*this.rem;return"string"==typeof a&&a.match(/rem$/)&&(b+="px"),b},k.px2rem=function(a){var b=parseFloat(a)/this.rem;return"string"==typeof a&&a.match(/px$/)&&(b+="rem"),b}}(window,window.lib||(window.lib={}));
+
+              browserRedirect_she='wap';
+              $('body').css('background','#26282c');
+          } else {
+              // alert("pc");
+              // document.write('<link rel="stylesheet" type="text/css" href="http://openapi.9dcj.com/css/9d_live2.css">');
+          }
+    }
+    browserRedirect()
+
+    </script>
+</head>
+<body>
+     <!-- box_9d是需要挂载的盒子 -->
+    <div class="box_9d">
+        <div class="geren_9dLeft">
+           <div class="msg_info2">
+              <p class="msg_txt msg_txt_quan">
+                <img class="headimage" src="http://cdn.9dcj.com/aliyun/2017-03-14/58c7b35b1af05.png?x-oss-process=image/resize,m_mfit,w_44,h_44">
+                <p class="login_regist">
+                  <span onclick="video_9d.prototype.showLogin()" class="showbut">登录</span>
+                  <span onclick="video_9d.prototype.zhuLogin()" class="zhuce">注册</span>
+                </p>
+                <p class="tuichu" onclick="video_9d.prototype.tuichu()">退出</p>
+              </p>
+           </div>
+        </div>
+        <div class="geren_9dtop">
+          <p class="host-info_right"><span class="ninemoney">账户余额：<s class="ninemoney_s">0.00</s>???钻石</span></p>
+
+        </div>
+        <span class="box_9d_img left">
+        <img class="imgs_9d" data-wxbian="2" src="http://openapi.9dcj.com/Public/images/2.gif" width="1417" height="804" alt="">
+        <!-- 播放器和礼物在视频中的动画效果 -->
+        </span>
+        <div class="chat_9d left">
+        <!-- 聊天js追加部分 -->
+        </div>
+        <div class="gifts_9d">
+        <!-- 礼物js追加部分 -->
+        </div>
+    </div>
+    <!-- iframe模态框 -->
+    <div id="iframe_9d"></div>
+    <script src="http://openapi.9dcj.com/js/9d_video.js"></script>
+    <script>
+        var myVideo_9d=new video_9d('.box_9d_img',{
+            recordID:150,
+            appKey:'316ea9ce89c31cb32fe2158052085e63',//秘钥
+            url_roomid:"HGN85PrSB3Ze4RNdvpkoME",//直播流的唯一标识(需网站申请)
+            teacher_roomid:131,//ws的唯一标示(需网站申请)
+            poster:"http://openapi.9dcj.com/Public/images/2.gif",//视频的封面(可自定义)
+            playToggle:false
+        });
+    </script>
+</body>
+</html>

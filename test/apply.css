@@ -1,0 +1,474 @@
+* {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+input{
+	outline: none;
+	-webkit-appearance: none;
+	}
+
+
+.re_con_info_label,
+.re_con_info,
+.re_con {
+	zoom: 1;
+}
+
+.re_con_info_label :before,
+.re_con_info :before,
+.re_con_info_label :after,
+.re_con_info :after,
+.re_con :after,
+.re_con :after
+ {
+	content: "";
+	display: table;
+}
+
+.re_con_info_label :after,
+.re_con :after,
+.re_con_info :after {
+	overflow: hidden;
+	clear: both;
+}
+
+.re_con {
+	width: 100%;
+	height: 100%;
+	padding: .173333rem .4rem;
+	position: relative;
+}
+
+.re_con img {
+	width: 100%;
+}
+
+.re_con_info {
+	margin-top: .6rem;
+}
+
+.re_con_info_label {
+	width: 100%;
+	text-align: center;
+}
+
+.re_con_info_label li {
+	display: inline-block;
+	font-size: .4rem;
+	margin: .333333rem .18rem;
+
+}
+
+.re_con_info_label_li {
+	margin-top: .426667rem;
+}
+
+.re_con_info_label_li li {
+	width: 100%;
+	height: 1.613333rem;
+	-moz-box-shadow: 0px 0px .226667rem .106667rem #FEF7F7;
+	-webkit-box-shadow: 0px 0px .226667rem .106667rem #FEF7F7;
+	box-shadow: 0px 0px .226667rem .106667rem #FEF7F7;
+	padding-top: .266667rem;
+	padding-left: .666667rem;
+	margin-bottom: .4rem;
+	border-radius: 5px;
+}
+
+.re_con_info_label_li_left {
+	margin-right: .6rem;
+	padding-top: .16rem;
+}
+
+.re_con_info_label_li_left img {
+	width: .8rem;
+}
+
+.re_con_info_label_li_right {
+	max-width: 6.88rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	word-break: break-all;
+}
+
+.re_con_info_label_li_right_title {
+	font-size: .426667rem;
+	color: #333;
+	font-weight: 500;
+}
+
+.re_con_info_label_li_right_intro {
+	font-size: .32rem;
+	color: #666666;
+}
+
+
+.Apply {
+	width: 9.2rem;
+	height: 1.3rem;
+	color: #fff;
+	font-size: .426667rem;
+	text-align: center;
+	line-height: 1.3rem;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	/* margin: 0 auto; */
+	position: fixed;
+	bottom: .4rem;
+	background: #e51c23;
+}
+
+
+.Applyed {
+	width: 9.2rem;
+	height: 1.3rem;
+	color: #fff;
+	font-size: .426667rem;
+	text-align: center;
+	line-height: 1.3rem;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	position: fixed;
+	bottom: .4rem;
+	background: #999999;
+}
+
+.botdialog {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0.5)
+}
+
+.botdialog .dialog {
+	width: 8.53rem;
+	height: 10.8rem;
+	background: #fff;
+	margin: 0 auto;
+	margin-top: 3.33rem;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding: .8rem;
+	position: relative;
+}
+
+.botdialog .Close {
+	width: 0.43rem;
+	height: 0.4rem;
+	background: url(../../images/pcrecruit/app/close.png) no-repeat center;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-ms-background-size: cover;
+	-o-background-size: cover;
+	position: absolute;
+	top: 0.53rem;
+	right: 0.53rem
+}
+
+.botdialog .dialog .one {
+	height: 1.07rem;
+	line-height: 1.07rem;
+	text-align: center;
+	width: 100%;
+	margin-top: 0.4rem;
+	font-size: .586667rem;
+	color: #333;
+	font-weight: 500;
+}
+
+.botdialog .dialog .two {
+	width: 100%;
+	height: 0.8rem;
+	line-height: 0.8rem;
+	text-align: center;
+	margin-bottom: 0.24rem;
+	font-size: 0.36rem;
+	color: #666666;
+}
+
+.botdialog .dialog .thr {
+	width: 6.67rem;
+	height: 0.88rem;
+	margin: 0 auto;
+	/*margin-bottom: 0.53rem;*/
+}
+
+.botdialog .dialog .thr .username {
+	width: 100%;
+	height: 100%;
+	border: 1px solid #dedede;
+	/* border-radius: 3px; */
+	padding: 0.05rem 0;
+	padding-left: 0.27rem;
+	line-height: 0.75rem;
+	/*font-size: 0.4rem*/
+}
+
+.botdialog .dialog .fou {
+	width: 6.67rem;
+	height: 0.88rem;
+	margin: 0 auto;
+	/*margin-bottom: 0.53rem;*/
+}
+
+.botdialog .dialog .fou .phone {
+	width: 100%;
+	height: 100%;
+	 border: 1px solid #dedede;
+	/* border-radius: 3px; */
+	padding: 0.05rem 0;
+	padding-left: 0.27rem;
+	line-height: 0.75rem;
+	/*font-size: 0.23rem ;*/
+}
+
+.botdialog .dialog .six {
+	width: 6.67rem;
+	height: 0.88rem;
+	margin: 0 auto;
+	margin-bottom: 0.53rem;
+}
+
+.botdialog .dialog .six .select_cfy {
+	width: 100%;
+	height: 100%;
+	border: 1px solid #b3b3b3;
+	padding: 0.05rem 0;
+	padding-left: 0.27rem;
+	line-height: 0.75rem;
+	color: #b3b3b3
+}
+
+.botdialog .dialog .six select:focus option:checked {
+	color: #be3632;
+}
+
+.botdialog .dialog .six select option:hover {
+	background: #f2f2f2
+}
+
+.botdialog .dialog .fiv {
+	width: 6.67rem;
+	height: 0.88rem;
+	margin: 0 auto;
+	/*margin-bottom: 0.77rem;*/
+}
+
+.botdialog .dialog .fiv .code {
+	width: 50%;
+	height: 100%;
+	 border: 1px solid #dedede;
+	/*border-radius: 3px; */
+	padding: 0.05rem 0;
+	padding-left: 0.27rem;
+	line-height: 0.75rem;
+	/*font-size: 0.23rem*/
+}
+
+.botdialog .dialog .fiv .codetext {
+	width: 3.2rem;
+	height: 100%;
+	background: #ccc;
+	display: block;
+}
+
+.botdialog .dialog .submit {
+	width: 100%;
+	height: .906667rem;
+	font-size: .373333rem;
+	color: #fff;
+	text-align: center;
+	line-height: .906667rem;
+	border-radius: 5px;
+	background: #e51c23
+}
+
+::-webkit-input-placeholder {
+	/* WebKit, Blink, Edge */
+	color: #b3b3b3;
+}
+
+:-moz-placeholder {
+	/* Mozilla Firefox 4 to 18 */
+	color: #b3b3b3;
+}
+
+::-moz-placeholder {
+	/* Mozilla Firefox 19+ */
+	color: #b3b3b3;
+}
+
+:-ms-input-placeholder {
+	/* Internet Explorer 10-11 */
+	color: #b3b3b3;
+}
+
+/*@media only screen and (min-device-width : 360px) and (device-height:640px){
+
+	.botdialog .dialog .fiv .codetext{
+		width: 3.2rem;
+		height: 100%;
+		background: #ff0;
+		display: block;
+	}
+}*/
+.botdialog .dialog .nameatt {
+	width: 6.67rem;
+	margin: 0 auto;
+	height: 0.53rem;
+	line-height: 0.53rem;
+	color: #ff2626;
+	font-size: 0.19rem;
+	/*visibility: hidden;*/
+	/*display: none*/
+}
+
+.botdialog .dialog .phoneatt {
+	width: 6.67rem;
+	margin: 0 auto;
+	height: 0.53rem;
+	line-height: 0.53rem;
+	color: #ff2626;
+	font-size: 0.19rem;
+	/*display: none*/
+	/*visibility: hidden;*/
+}
+
+.botdialog .dialog .codeatt {
+	width: 6.67rem;
+	margin: 0 auto;
+	height: 0.53rem;
+	line-height: 0.53rem;
+	color: #ff2626;
+	font-size: 0.19rem;
+	margin-bottom: 0.24rem;
+	/*display: none*/
+	/*visibility: hidden;*/
+}
+
+
+/******信息成功提交*******/
+.botdialog .Applysuccess {
+	width: 8.53rem;
+	height: 10.8rem;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	padding: .8rem;
+	border-radius: 0.2rem;
+	-webkit-border-radius: 0.2rem;
+	-moz-border-radius: 0.2rem;
+	-ms-border-radius: 0.2rem;
+	-o-border-radius: 0.2rem;
+
+	text-align: center;
+	font-size: 0.4rem;
+	font-weight: 500;
+	display: none;
+}
+
+.Applysuccess img {
+	width: 2.4rem;
+	height: 2.4rem;
+	margin-top: .666667rem;
+}
+
+
+.Applysuccess .submit {
+	width: 100%;
+	height: .906667rem;
+	font-size: .373333rem;
+	color: #fff;
+	text-align: center;
+	line-height: .906667rem;
+	margin-top: 2.026667rem;
+	border-radius: 5px;
+	background: #e51c23;
+}
+
+.botdialog .Applysuccess .fir {
+	height: 2.4rem;
+	line-height: 2.4rem;
+	color: #333
+}
+
+.fir1100 {
+	color: #333333;
+	font-size: .48rem;
+	margin-top: 1.333333rem;
+	font-weight: 500;
+}
+
+.fir1101 {
+	color: #999;
+	font-size: .346667rem;
+	margin-top: .56rem;
+}
+
+.botdialog .Applysuccess .sec {
+	line-height: 1.17rem;
+	height: 1.17rem;
+	background: #fff;
+	color: #333;
+	border-top: 1px solid #f2f2f2;
+	border-radius: 0 0 .2rem .2rem;
+	margin: 0 auto;
+}
+
+.goodclass {
+	width: 6.67rem;
+	margin: 0 auto .4rem;
+	font-size: 0.19rem;
+}
+
+.goodclass>h5 {
+	font-size: .3rem;
+	color: #999;
+	height: .6rem;
+	line-height: .6rem;
+	margin-bottom: .2rem;
+}
+
+.goodclass>p {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.goodclass>p>span {
+	display: inline-block;
+	width: 1.3rem;
+	line-height: .6rem;
+	text-align: center;
+	font-size: .3rem;
+	color: #8c8c8c;
+	border: 1px solid #dedede;
+	border-radius: 3px;
+}
+
+.goodclass>p .re_on {
+	border: 1px solid #fad2d3;
+	background: #ffe5e5;
+	color: #e51c23;
+}

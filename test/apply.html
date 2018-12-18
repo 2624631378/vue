@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="email=no" name="format-detection">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>9度财经</title>
+	<link rel="stylesheet" href="base.css">
+	<link rel="stylesheet" href="apply.css?v=20181115">
+	<script src="jquery-1.7.2.min.js"></script>
+	<script src="flexible.js"></script>
+</head>
+
+<body>
+	<input id="accesstoken" type="hidden" value="{$accesstoken}">
+	<div class="re_con">
+		<div class="re_con_img">
+			<img src="/Public/images/apply/applybanner.png">
+		</div>
+		<div class="re_con_info">
+
+			<img src="/Public/images/apply/apply_1.png">
+			<ul class="re_con_info_label">
+				<li>财经主播</li>
+				<li>民间高手</li>
+				<li>投资达人</li>
+				<li>等你很久了！</li>
+			</ul>
+
+			<ul class="re_con_info_label_li">
+
+				<li>
+
+					<div class="re_con_info_label_li_left fl">
+						<img src="/Public/images/apply/heart@2x.png">
+					</div>
+					<div class="re_con_info_label_li_right fl">
+
+						<div class="re_con_info_label_li_right_title">3年专注</div>
+						<div class="re_con_info_label_li_right_intro">做财经直播我们是认真的</div>
+					</div>
+				</li>
+
+				<li>
+
+					<div class="re_con_info_label_li_left fl">
+						<img src="/Public/images/apply/fensi@2x.png">
+					</div>
+					<div class="re_con_info_label_li_right fl">
+
+						<div class="re_con_info_label_li_right_title">铁杆粉丝团</div>
+						<div class="re_con_info_label_li_right_intro">庞大的流量支撑，钟情的粉丝支持</div>
+					</div>
+				</li>
+
+
+				<li>
+
+					<div class="re_con_info_label_li_left fl">
+						<img src="/Public/images/apply/gift@2x.png">
+					</div>
+					<div class="re_con_info_label_li_right fl">
+
+						<div class="re_con_info_label_li_right_title">福利丰富</div>
+						<div class="re_con_info_label_li_right_intro">入驻补贴+礼物打赏+课程收入+活动营收+...</div>
+					</div>
+				</li>
+
+
+				<li>
+
+					<div class="re_con_info_label_li_left fl">
+						<img src="/Public/images/apply/support@2x.png">
+					</div>
+					<div class="re_con_info_label_li_right fl">
+
+						<div class="re_con_info_label_li_right_title">辅助支持</div>
+						<div class="re_con_info_label_li_right_intro">直播设备、演播厅、营销助理应有尽有</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+	
+			<div id="applying" class="Apply" onclick="Apply()">
+				立即申请主播
+			</div>
+	
+
+	
+	</div>
+
+
+	<div class="botdialog" style="display:none">
+		<div class="dialog">
+			<div class="Close" onclick="Close()"></div>
+			<p class="one">主播申请</p>
+			<p class="two">提交信息&nbsp;专人电话服务指导</p>
+			<p class="thr">
+				<input type="text" id="reg_rooms_name" placeholder="请输入您的姓名" onfocus="if(placeholder=='请输入您的姓名') {placeholder=''}"
+				 onblur="if (value=='') {placeholder='请输入您的姓名'}" class="username">
+			</p>
+			<div class="nameatt"></div>
+			<p class="fou">
+				<input type="tel" id="reg_rooms_phone" placeholder="请输入您的手机号码" onfocus="if(placeholder=='请输入您的手机号码') {placeholder=''}"
+				 onblur="if (value=='') {placeholder='请输入您的手机号码'}" class=" phone">
+			</p>
+			<div class="phoneatt"></div>
+			<div class="goodclass">
+
+				<p class="gd_class">
+					<span class="re_on" data-value="1">股票</span>
+					<span data-value="2">期货</span>
+					<span data-value="5">黄金</span>
+					<span data-value="7">外汇</span>
+				</p>
+			</div>
+			<p class="fiv">
+				<input type="tel" id="reg_rooms_code" placeholder="请输入验证码" onfocus="if(placeholder=='请输入验证码') {placeholder=''}"
+				 onBlur="yan(this.value)" class="left code">
+				<img class="right codetext" id="rooms_code" src="{:C('LOGIN')}/verify" onclick="verifyPage()" />
+			</p>
+			<div class="codeatt"></div>
+			<div class="submit" onclick="room_appl()">提交</div>
+		</div>
+		<div class="Applysuccess">
+			<div class="Close" onclick="Close()"></div>
+			<img src="/Public/images/apply/success@2x.png">
+			<p class="fir1100">您已成功提交</p>
+			<p class="fir1101">我们的工作人员会在7个工作日内联系您！</p>
+			<div class="submit" onclick="Sure()">知道了</div>
+
+		</div>
+	</div>
+</body>
+
+</html>
+<script>
+	//验证码验证
+	function yan(code) {
+		if (code == "") {
+			$("#reg_rooms_code").attr("placeholder","请输入验证码");
+			return false;
+		}
+		$.ajax({
+			type: 'get',
+			url: "{:C('LOGIN')}/verify",
+			data: {
+				code: code
+			},
+			dataType: 'JSONP',
+			jsonp: call_back,
+			success: function (res) {
+				if (res.status != 1) {
+					$('.codeatt').html('验证码输入错误');
+				} else {
+					$('.codeatt').html('');
+				}
+			},
+			error: function (e) {
+				alert(" 网络繁忙,请稍后..."); //执行错误
+			}
+		});
+	}
+
+
+
+	var u = navigator.userAgent;
+	var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+	function verifyPage() {
+		var vaerifycode = "{:C('LOGIN')}/verify?i=" + Math.random();
+		$("#rooms_code").attr("src", vaerifycode);
+	}
+	$(function () {
+		$(".gd_class span").click(function () {
+			$(this).addClass("re_on").siblings().removeClass("re_on");
+		})
+	});
+	//---------点击提交---------
+	function Sure() {
+		$('.Applysuccess').css({
+			'display': 'none'
+		});
+		$('.botdialog').css({
+			'display': 'none'
+		});
+		$('.dialog').css({
+			'display': 'block'
+		});
+		$('body').css({
+			'overflow': 'auto'
+		});
+		Starttouch();
+		$('.nameatt').html('')
+		$('.phoneatt').html('')
+		$('.codeatt').html('')
+		$('.username').val('')
+		$('.phone').val('')
+		$('.code').val('')
+	}
+
+
+
+	// -------点击申请--------
+	function Apply() {
+		verifyPage();
+		$('.botdialog').css({
+			'display': 'block'
+		});
+		$('body').css({
+			'overflow': 'hidden'
+		});
+		Stoptouch()
+	};
+	//---------点击弹窗关闭---------
+	function Close() {
+		$('.botdialog').css({
+			'display': 'none'
+		});
+		$('body').css({
+			'overflow-y': 'auto'
+		});
+		Starttouch();
+		$('.nameatt').html('')
+		$('.phoneatt').html('')
+		$('.codeatt').html('')
+		$('.username').val('')
+		$('.phone').val('')
+		$('.code').val('')
+	}
+	// --------去除所有空格----------
+	function removeAllSpace(str) {
+		return str.replace(/\s+/g, "");
+	}
+
+	function Phonetest(str) {
+		var Phonetest = /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/;
+		return Phonetest.test(str);
+	}
+	// -------判断键盘是否弹出--------
+	// var StartHeight = document.documentElement.clientHeight;
+
+	// $(window).resize(function () {
+	// 	var ChangeHeight = document.documentElement.clientHeight;
+	// 	if (StartHeight - ChangeHeight > 100) {
+	// 		$('.dialog').css({
+	// 			'margin-top': '-0.3rem'
+	// 		})
+	// 	} else {
+	// 		$('.dialog').css({
+	// 			'margin-top': '3.33rem'
+	// 		})
+	// 	}
+	// });
+
+
+
+	var u = navigator.userAgent;
+	var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+	$("input[type='text'],input[type='tel']").click(function () {
+		alert('123')
+		var oriWinHeight = window.innerHeight;
+
+	
+			var winHeight = $(window).height();
+			$(window).resize(function () {
+				var thisHeight = $(this).height();
+				if (winHeight - thisHeight > 140) {
+					$('.dialog').css({
+						'margin-top': '-0.3rem'
+					})
+				} else {
+					$('.dialog').css({
+						'margin-top': '3.33rem'
+					})
+				}
+
+			})
+	
+
+	})
+
+
+
+	// -------阻止touchmove--------
+	function Stoptouch() {
+		$("body").on("touchmove", function (event) {
+			event.preventDefault();
+		}, false)
+	}
+
+	function Starttouch() {
+		$('body').off('touchmove')
+
+	}
+
+	function room_appl() {
+		var accesstoken = $("#accesstoken").val();
+		var phone = $('#reg_rooms_phone').val();
+		var name = $.trim($('#reg_rooms_name').val());
+		// var classify =$(".select_cfy").val();
+		var gdclass = $(".re_on").attr("data-value");
+		var code = $("#reg_rooms_code").val();
+		if (name == '') {
+			$('.nameatt').html('用户名不能为空');
+            $('.phoneatt').html('');
+            $('.codeatt').html('');
+			return false;
+		} else {
+			$('.nameatt').html('');
+		}
+
+		if (!Phonetest(phone)) {
+			$('.phoneatt').html('手机号码输入错误');
+            $('.codeatt').html('');
+			return false;
+		} else {
+			$('.phoneatt').html('');
+		}
+
+		if (code == '') {
+			$('.codeatt').html('验证码输入错误');
+			return false;
+		} else {
+			$('.codeatt').html('');
+		}
+		sourcefrom = 1;
+		if (isAndroid) {
+			sourcefrom = 2;
+		}
+		$.ajax({
+			url: "{:C('INDEX')}/OpenAccount/regRoom",
+			type: 'get',
+			async: true,
+			data: {
+				"accesstoken": accesstoken,
+				"phone": phone,
+				"name": name,
+				"code": code,
+				"source": sourcefrom,
+				"classify": gdclass
+			},
+			dataType: 'JSONP',
+			jsonp: "{:C('VAR_JSONP_HANDLER')}",
+			success: function (data) {
+				if (data.status == 1) {
+					$('#reg_rooms_phone').val("");
+					$('#reg_rooms_name').val("");
+					$("#reg_rooms_code").val("");
+					$('.nameatt').html('')
+					$('.phoneatt').html('')
+					$('.codeatt').html('')
+					$('.Applysuccess').css({
+						'display': 'block'
+					});
+					$('.dialog').css({
+						'display': 'none'
+					});
+					$("#applying").css({
+						"display": "none"
+					});
+					$("#applied").css({
+						"display": "block"
+					});
+				} else if (data.status == -1) {
+					$(".nameatt").html(data.msg);
+				} else if (data.status == -2) {
+					$('.codeatt').html(data.msg);
+				} else {
+					$('.phoneatt').html(data.msg);
+				}
+			},
+			error: function (msg) {
+				alert(" 网络繁忙,请稍后..."); //执行错误
+			}
+		})
+	}
+</script>
+
+<script>
+	var statistics = function (action) {
+		var url = "/Ad/createAdStatistic";
+		var postData = {
+			"aid": 1016,
+			"adclassifyid": 22,
+			"action": action
+		}; // 主播申请作为一种广告进行统计
+		$.post(url, postData, function (d) {
+			console.log(d);
+		});
+	}
+
+	window.onload = function () {
+		statistics(1);
+	}
+
+	window.onbeforeunload = function () {
+		alert(1);
+		statistics(2);
+	}
+</script>

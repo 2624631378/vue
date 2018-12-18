@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+
+            <li v-for="(list,index) in lists">
+                    <!-- <a @click="curshow(list)">{{list.name}}</a> -->
+                <a @click="curshow1(index)">{{list.name}}</a>
+                <!-- <b :class="{up:!list.issubshow, down:list.issubshow}">></b> -->
+                <!-- <b :class="list.issubshow ? 'up':'down' ">></b> -->
+                <b :class="curindex == index ? 'up':'down' ">></b>
+                <ul v-show="curindex == index">
+                    <li v-for="(item,i) in list.subitems">
+                        <a>{{item.name}}</a>
+
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <script src="index.js"></script>
+    <style>
+        b {
+            transform: all ease 10s;
+        }
+
+        .up {
+
+            color: aqua;
+        }
+
+        .down {
+            color: blueviolet;
+        }
+    </style>
+</body>
+
+</html>
