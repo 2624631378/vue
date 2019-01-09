@@ -7,9 +7,7 @@ import url from 'js/api.js'
 import Foot from 'components/Foot.vue'
 import Swipe from 'components/Swipe.vue'
 
-import {
-  InfiniteScroll
-} from 'mint-ui'
+import { InfiniteScroll } from 'mint-ui'
 Vue.use(InfiniteScroll)
 
 new Vue({
@@ -35,7 +33,7 @@ new Vue({
         pageSize: this.pageSize
       }).then(res => {
         let curLists = res.data.lists
-        if (curLists.length < this.pageSize) {
+        if(curLists.length < this.pageSize) {
           this.allLoaded = true
         }
         if (this.lists) {

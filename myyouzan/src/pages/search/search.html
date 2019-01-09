@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html class="no-js " lang="zh-CN">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>列表</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <style>
+  [v-cloak]{display: none}
+  </style>
+</head>
+
+<body class=" " style="min-height: 667px;">
+  <div id='searchpages' v-cloak >
+
+    <div class="container with-top-search" style="min-height: 667px;"  >
+      <div class="custom-search js-search-bar">
+        <form>
+          <input type="search" class="custom-search-input" autocomplete="off" name="keyword" :value="name" placeholder="搜索更赞的商品"
+            style="padding-left: 66px;">
+          <span class="icon-custom-search"></span>
+        </form>
+        <button class="custom-search-type-selection-btn custom-search-type-selection-btn-focus">商品</button>
+        <span class="cancel">取消</span>
+        <div class="search-type-dropdown-menu" style="display: none;">
+          <span class="search-type-dropdown-menu-indicator">
+            <i></i>
+          </span>
+          <div class="drop-menu-content">
+            <div class="search-type-goods">
+              <i class="icon-goods"></i>
+              <span>商品</span>
+            </div>
+            <div class="search-type-dropdown-menu-divider"></div>
+            <div class="search-type-shop">
+              <i class="icon-shop"></i>
+              <span>店铺</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="search-content" style="display: none;"></div>
+      <div class="content" @click="move">
+        <div class="search-wrap js-waterfull-wrap">
+          <ul class="js-list" 
+          v-infinite-scroll="getsearchlists" 
+        infinite-scroll-disabled="loading"
+        infinite-scroll-distance="50"
+        >
+
+
+            <li class="goods-item" v-for="(list,index) in searchlists">
+              <a :href="list.link">
+                <div class="thumb">
+                  <img :src="list.img">
+                  <i class="sell-out" v-if="list.isout"></i>
+                </div>
+                <div class="detail">
+                  <div class="title">{{list.title}}</div>
+                  <div class="meta relative">
+                    <span class="price">￥{{list.price}}</span>
+
+                    <template v-if="list.isyouji">
+                      <span class="ship pull-right">不包邮</span>
+                    </template><template v-else>
+                      <span class="ship pull-right">包邮</span>
+
+                    </template>
+
+
+                  </div>
+                </div>
+              </a>
+            </li>
+
+          </ul>
+          <div class="list-finished" v-show="!allload">已经没有更多了</div>
+        </div>
+      </div>
+      <div class="go-to-top" v-show="isshow" style=" transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);"></div>
+    </div>
+
+  </div>
+</body>
+
+</html>
