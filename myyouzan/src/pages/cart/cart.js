@@ -42,6 +42,7 @@ new Vue({
         let lists = res.data.cartlist
         lists.forEach(shop => {
           shop.checked = true
+          shop.removechecked = false
           shop.edited = false
           shop.editedtext = '编辑'
           shop.goodslists.forEach(good => {

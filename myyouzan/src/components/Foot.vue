@@ -39,7 +39,7 @@ export default {
         {
           name: "我",
           icon: "icon-user",
-          link: "、"
+          link: "member.html"
         }
       ]
     };
