@@ -1,6 +1,5 @@
 import 'css/common.css'
 import './search.css'
-
 import Vue from 'vue'
 import url from 'js/api.js'
 import axios from 'axios'
@@ -8,15 +7,12 @@ import {
   InfiniteScroll
 } from 'mint-ui'
 import qs from 'qs'
-
 Vue.use(InfiniteScroll)
 
 
 new Vue({
-
   el: "#searchpages",
   data: {
-
     searchlists: null,
     id: '12',
     name: '12',
@@ -28,7 +24,6 @@ new Vue({
 
   },
   created() {
-
     this.getsearchlists()
     // this.id = this.getUrlKey("id");
     // this.name = this.getUrlKey("name");
@@ -54,26 +49,19 @@ new Vue({
       }).then(res => {
         console.log(res)
         let curhotLists = res.data.searchlists
-        // curhotLists = res.data.searchlists
         if (curhotLists.length < this.pageSize) {
-
           this.allload = true
         } else if (this.searchlists) {
           this.searchlists = this.searchlists.concat(curhotLists)
-
         } else {
           this.searchlists = curhotLists
-
         }
-
       })
-
       this.loading = false
       this.pageNum++
     },
 
-    move() {
-         
+    move() {         
       if (document.body.scrollTop > 30) {
         this.isshow = true
       } else {

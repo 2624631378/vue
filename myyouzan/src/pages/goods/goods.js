@@ -16,7 +16,8 @@ import qs from 'qs'
 // let data = qs.parse(location.href.split('?')[1])
 let {
   id
-} = qs.parse(location.search.substr(1))
+} = qs.parse(location.search.substr(1))   //利用qs获取url中的id值   qs.parse将url解析成对象形式
+                                          // location.search是从当前URL的?号开始的字符串         substr指定位置截取， substr(1) 去除 ？ 
 
 
 
@@ -33,63 +34,54 @@ new Vue({
     addcartqwewqe: false,
     showAddMessage: false,
     typenum: 0,
-    addcarteds:false
+    addcarteds: false
 
   },
-  methods: {
 
+  created() {
+    this.getgoodsdetail()
+  },
+
+  methods: {
     getgoodsdetail() {
       axios.get(url.goodsdetail, {
         id
       }).then(res => {
-
-        console.log(res)
         let curgoodsdetail = res.data.goodsdetail
-
         curgoodsdetail.img.forEach(item => {
-
-          this.swplists.push({
+          this.swplists.push({        // 复用轮播组件，保持数据结构一致，则遍历所有项，添加link
             link: '',
             img: item.src
-
-
           })
         });
-
         this.goodsdetail = curgoodsdetail
-
-
       })
-
     },
+
     tablechage(index) {
       this.curindex = index
     },
+
     addcartse(i) {
       this.addcartqwewqe = true
       this.typenum = i
-
     },
-    addnumber() {
 
+    addnumber() {
       this.stnumber++
     },
+
     descnumber() {
       if (this.stnumber === 1) return;
       this.stnumber--
     },
+
     addcartst() {
-
       axios.get(url.addcart, {
-
         id,
         number: this.stnumber
-
       }).then(res => {
-
         if (res.data.statue === 200) {
-          console.log(res.data.message)
-
           let self = this
           this.addcartqwewqe = false
           this.showAddMessage = true
@@ -99,22 +91,14 @@ new Vue({
           }, 1000)
         }
       })
-
-
-
-    }
-
+    },
 
   },
-  created() {
-    this.getgoodsdetail()
 
-  },
   components: {
     swiper
-
   },
-  watch: {
+  watch: {           // 监听属性，监听addcartqwewqe的变化，改变页面属性，保证下拉只是，导航定位在底部
     addcartqwewqe: function (val, oldval) {
       document.body.style.overflow = val ? 'hidden' : 'auto'
       document.body.style.height = val ? '100%' : 'auto'

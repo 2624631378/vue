@@ -42,30 +42,30 @@ new Vue({
   methods: {
     getswplists() {
       axios.get(url.bannerlists).then(res => {
-        this.swplists = res.data.bannerlist
+        this.swplists = res.data.bannerlist    // 赋值数据
 
       })
 
     },
     gethotLists() {
-      if (this.allload) return;
-      this.loading = true;
-      axios.get(url.hotLists, {
+      if (this.allload) return;  // 如果全部加载完毕，则不再请求数据
+      this.loading = true;       // 页面显示加载图标
+      axios.get(url.hotLists, {  
         pageNum: this.pageNum,
         pageSize: this.pageSize
       }).then(res => {
 
         let curhotLists = res.data.list
 
-        if (curhotLists.length < this.pageSize) {
-          this.allload = true
-        } else if (this.hotLists) {
+        if (curhotLists.length < this.pageSize) {   // 如果当前页数据长度小于pagesize，则判定所有数据加载完毕
+          this.allload = true                       
+        } else if (this.hotLists) {                 // 如果已经存在数据，则将新请求的数据追加到原数组中
           this.hotLists = this.hotLists.concat(curhotLists)
         } else {
-          this.hotLists = curhotLists
+          this.hotLists = curhotLists               // 如果不存在数据，则将请求的数据赋值给数组
         }
-        this.loading = false;
-        this.pageNum++
+        this.loading = false;                       
+        this.pageNum++                              // 加载下一页，页码递增
 
       })
 

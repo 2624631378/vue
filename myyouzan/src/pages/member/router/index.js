@@ -16,10 +16,10 @@ const routes = [{
   path: '/address',
   name: "addresslink",
   component: address,
-  beforeEnter: (to, from, next) => {
-    alert('请先登录或者注册')
+  // beforeEnter: (to, from, next) => {
+  //   alert('请先登录或者注册')
    
-  }
+  // }
 },
 {
   path: '/address_add',

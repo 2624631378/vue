@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-<AddBlog></AddBlog>
+    <blogheader></blogheader>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import AddBlog from './components/AddBlog'
-
+import blogheader from "./components/BlogHeader";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    AddBlog
+    blogheader
   }
-}
+};
 </script>
 
 <style>
